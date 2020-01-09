@@ -1,0 +1,178 @@
+<!doctype <!DOCTYPE html>
+  <html>
+  <head>
+      <meta charset="utf-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>读书小站|分享好书，发现世界</title>
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <script type="text/javascript" src="../js/signin.js" ></script>
+     <style type="text/css">
+    html,body{
+       margin: 0;
+       padding: 0;
+   }
+  body{
+       background:url(../images/background7.png); background-repeat:x;
+   }
+   
+  .clearn{
+      float: none;
+  }
+  
+  #login-frame{   
+     width: 600px;
+     height: 650px;
+      margin: 100px  auto 0;
+     background-color: #fff;
+  }
+  #main{
+      margin: 20px 90px auto;
+  }
+  
+  #logo{
+  
+      width: 150px;
+      height: 135px;
+      margin: 85px auto 0;
+      background-position: 0;
+      list-style: none;
+  }
+  
+  .lable{
+      font-size: 14px;
+      color: hsla(0, 0%, 63%, 0.932);
+      text-align: center;
+      position: relative;
+      margin: -30px auto;
+  }
+  
+  .lable::before{
+      content: "";
+      border-top: #dadada solid 1px;
+      position: absolute;
+      width: 138px;
+      left: 0;
+      top: 11px;
+  }
+  .lable::after{
+      content: "";
+      border-top: #dadada solid 1px;
+      position: absolute;
+      width: 138px;
+      right: 0;
+      top: 11px;
+  }
+  
+ .text-2{
+     margin: -10px auto;
+ }
+ 
+ #main.mail-login{
+     display: block;
+     width: 100px;
+ }
+ 
+ #email{
+ margin: 25px auto 0;
+ }
+ .mail-login>input{
+     height: 34px;
+     width: 100%;
+     margin: 10px auto 0;
+     outline: 0;
+     border: 1px solid #dadada;
+     border-radius: 3px;
+     text-indent: 10px;
+     outline: none;
+ }
+ 
+ #btn-login{
+     height: 34px;
+     display: block;
+     text-align: center;
+     line-height: 34px;
+     background: rgb(216, 83, 83);
+     border-radius: 3px;
+     font-size: 18px;
+     color: #fff;
+     text-decoration: none;
+     margin-top: 10px;
+}
+ #btn-login:hover{
+     background: rgb(221, 15, 15);
+ }
+ 
+ #register-forgetpsd{
+     margin: 10px auto 30px;
+     font: 10px;
+ }
+ .forget-pwd,.register{
+     color: rgb(158, 25, 25);
+     float: left;
+     text-decoration: none;
+     list-style-type: none;
+ }
+ .forget-pwd:hover,.register:hover{
+     text-decoration: underline;
+ }
+ 
+ #register{
+     float: right;
+ }
+ .register{
+     float: right;
+ }
+ .no-accounter{
+     color: #292727;
+}
+.right{
+    position: absolute;
+    top: 150px;
+    right:560px;
+ 
+}
+     </style>
+  </head>
+ <body>
+    <div>
+    <iframe src="head1.html" frameborder="0" width="1349px" height="150px" scrolling="no" class="background"> </iframe>
+</div> <br /><br />
+
+     <div id="login-frame">
+         <div id="main">
+             <div id="logo"></div>
+            <ul class="right"><img src="../images/hello.png" width="300" height="220" /></ul>
+                 <form class="mail-login" action="login" method="POST">
+       <input type="text" name="name" id="nickName" class="form_set" onfocus="nickNameFocus()" onblur="nickNameBlur()" placeholder="昵称：不能少于3个字符" /></td>
+       <div id="nickName_prompt" style="width:260px;"></div>
+       <input type="text" name="email" id="email" class="form_set" onFocus="emailFocus()" onblur="emailBlur()" placeholder="邮箱号：@qq.com"/>
+       <div id="email_prompt" style="width:260px"></div>
+        <input type="text" name="phone" id="phone" class="form_set" onfocus="phoneFocus()" onblur="phoneBlur()"placeholder="手机号"/>
+         <div id="phone_prompt" style="width:260px"> </div>
+        <input type="password" name="password"id="password" class="form_set" onfocus="pwdFocus()" onblur="pwdBlur()" placeholder="密码：不能少于6个字符"/>
+        <div id="password_prompt" style="width:260px"> </div>
+      <input type="password" name="repassword" id="repassword" class="form_set" onfocus="repwdFocus()" onblur="repwdBlur()"placeholder="确认密码："/>
+         <div id="repassword_prompt" style="width:260px"> </div>
+    
+            
+      
+              <a id="btn-login" href="" type="button" onclick="checkForm()">
+                         <span class="text">注 册</span>
+                     </a>
+
+                 </form>
+                 <div id="forget-pwd">
+                     <a class="forget-pwd" href="../../index.html">返回首页<<</a>
+                 </div>
+                
+                 <br><br><br><br> <br><br>    
+                 </div>
+                 
+         </div>   
+     </div>
+ 
+     <div> 
+    <iframe src="../../home/html/foot.html" frameborder="0" width="1349px" height="300px" scrolling="no"> </iframe>
+</div>    
+ </body>
+ </html>

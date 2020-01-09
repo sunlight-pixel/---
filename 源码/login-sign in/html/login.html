@@ -1,0 +1,249 @@
+<!doctype <!DOCTYPE html>
+  <html>
+  <head>
+      <meta charset="utf-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>读书小站|分享好书，发现世界</title>
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     
+     <style type="text/css">
+    html,body{
+       margin: 0;
+       padding: 0;
+   }
+  body{
+       background:url(../images/background7.png); background-repeat:x;
+   }
+   
+  .clearn{
+      float: none;
+  }
+  
+  #login-frame{   
+     width: 600px;
+     height: 450px;
+      margin: 100px  auto 0;
+     background-color: #fff;
+  }
+  #main{
+      margin: 20px 90px auto;
+  }
+  
+  #logo{
+  
+      width: 150px;
+      height: 135px;
+      margin: 85px auto 0;
+      background-position: 0;
+      list-style: none;
+  }
+  
+  .lable{
+      font-size: 14px;
+      color: hsla(0, 0%, 63%, 0.932);
+      text-align: center;
+      position: relative;
+      margin: -30px auto;
+  }
+  
+  .lable::before{
+      content: "";
+      border-top: #dadada solid 1px;
+      position: absolute;
+      width: 138px;
+      left: 0;
+      top: 11px;
+  }
+  .lable::after{
+      content: "";
+      border-top: #dadada solid 1px;
+      position: absolute;
+      width: 138px;
+      right: 0;
+      top: 11px;
+  }
+  
+ .text-2{
+     margin: -10px auto;
+ }
+ 
+ #main.mail-login{
+     display: block;
+     width: 100px;
+ }
+ 
+ #email{
+ margin: 25px auto 0;
+ }
+ .mail-login>input{
+     height: 34px;
+     width: 100%;
+     margin: 10px auto 0;
+     outline: 0;
+     border: 1px solid #dadada;
+     border-radius: 3px;
+     text-indent: 10px;
+     outline: none;
+ }
+ 
+ #btn-login{
+     height: 34px;
+     display: block;
+     text-align: center;
+     line-height: 34px;
+     background: rgb(216, 83, 83);
+     border-radius: 3px;
+     font-size: 18px;
+     color: #fff;
+     text-decoration: none;
+     margin-top: 10px;
+}
+ #btn-login:hover{
+     background: rgb(221, 15, 15);
+ }
+ 
+ #register-forgetpsd{
+     margin: 10px auto 30px;
+     font: 10px;
+ }
+ .forget-pwd,.register{
+     color: rgb(158, 25, 25);
+     float: left;
+     text-decoration: none;
+     list-style-type: none;
+ }
+ .forget-pwd:hover,.register:hover{
+     text-decoration: underline;
+ }
+ 
+ #register{
+     float: right;
+ }
+ .register{
+     float: right;
+ }
+ .no-accounter{
+     color: #292727;
+}
+.right{
+    position: absolute;
+    top: 150px;
+    right:560px;
+ 
+}
+     </style>
+     <script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery/jquery-1.4.min.js"></script>
+     <script>
+       //页面加载时，生成随机验证码
+    window.onload=function(){
+     createCode(4);    
+    }
+
+    //生成验证码的方法
+    function createCode(length) {
+        var code = "";
+        var codeLength = parseInt(length); //验证码的长度
+        var checkCode = document.getElementById("checkCode");
+        ////所有候选组成验证码的字符，当然也可以用中文的
+        var codeChars = new Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9,
+        'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z',
+        'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'); 
+        //循环组成验证码的字符串
+        for (var i = 0; i < codeLength; i++)
+        {
+            //获取随机验证码下标
+            var charNum = Math.floor(Math.random() * 62);
+            //组合成指定字符验证码
+            code += codeChars[charNum];
+        }
+        if (checkCode)
+        {
+            //为验证码区域添加样式名
+            checkCode.className = "code";
+            //将生成验证码赋值到显示区
+            checkCode.innerHTML = code;
+        }
+    }
+    
+    //检查验证码是否正确
+    function validateCode()
+    {
+        //获取显示区生成的验证码
+        var checkCode = document.getElementById("checkCode").innerHTML;
+        //获取输入的验证码
+        var inputCode = document.getElementById("inputCode").value;
+        //console.log(checkCode);
+        //console.log(inputCode);
+        if (inputCode.length <= 0)
+        {
+            alert("请输入验证码！");
+        }
+        else if (inputCode.toUpperCase() != checkCode.toUpperCase())
+        {
+            alert("验证码输入有误！");
+            createCode(4);
+        }
+        else
+        {
+            alert("验证码正确！");
+        }       
+    }  
+function SavePassword()
+            {
+                if(document.getElementById("savePassword").checked)
+                {
+                    var username = $("#email").val();
+                    var password = $("#password").val();
+                    window.sessionStorage.username =  username;
+                    window.sessionStorage.password = password;
+                    localStorage.rmbPassword = true;
+                }
+                else
+                {
+                    localStorage.rmbPassword = false;
+                }
+            }
+     </script>
+  </head>
+ <body>
+    <div>
+    <iframe src="head1.html" frameborder="0" width="1349px" height="150px" scrolling="no" class="background"> </iframe>
+</div> <br /><br />
+     <div id="login-frame">
+         <div id="main">
+             <div id="logo"></div>
+            <ul class="right"><img src="../images/hello.png" width="300" height="220" /></ul>
+                 <div class="lable text-2">使用邮箱登录</div>
+                 <form class="mail-login" action="login" method="POST">
+                     <input id="email" name="email" type="text" onblur="emailBlur()" placeholder="请输入您注册的邮箱号">
+                      <div id="nickName_prompt" style="width:260px;"></div>
+                     <input type="password" id="password" name="password" onblur="pwdBlur()" placeholder="密码">
+                    <!-- <h3>记住我</h3> <input type="checkbox" name="savePassword" id="savePassword" checked="checked" onclick="SavePassword()"> -->
+                     <div style="text-align: center;">
+                     <div id="checkCode" class="code" style="position: absolute;top: 550px;right: 622px;background-color: pink" onclick="createCode(4)" ></div><br>
+                    <span onclick="createCode(4)">看不清换一张</span>
+                    <input type="text" id="inputCode"  style="float:left;" />
+                    <input type="button" onclick="validateCode()"  value="确定" />
+                  </div>
+                     <a id="btn-login" href="../../home/html/home.html" type="button" onclick="checkForm()">
+                    
+                         <span class="text">登  录</span>
+                     </a>
+                 </form>
+                 <div id="forget-pwd">
+                     <a class="forget-pwd" href="../../index.html"><<返回首页&nbsp&nbsp&nbsp</a>
+                 </div>
+                 <div id="forget-pwd">
+                     <a class="forget-pwd" href="#">&nbsp&nbsp&nbsp忘记密码</a>
+                 </div>
+                 <div id="register"> 
+                     <span class="no-accounter"></span>还没有小站账号？</span>
+                     <a class="register" href="sign in.html">点击注册>></a>
+                 <br><br><br><br> <br><br>    
+                 </div>
+                 
+         </div>   
+     </div>   
+      <iframe src="../../home/html/foot.html" frameborder="0" width="1349px" height="300px" scrolling="no"> </iframe>  
+ </body>
+ </html>
